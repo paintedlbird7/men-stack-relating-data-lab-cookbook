@@ -45,11 +45,12 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/:pantryId', (req, res) => {
-  res.send(`here is your request param: ${req.params.pantryId}`);
-});
+// router.get('/:pantryId', (req, res) => {
+//   // res.send(`here is your request param: ${req.params.pantryId}`);
+// });
 
-
+// GET by id
+// TODO: doesn't show page for individual id
 router.get('/:pantryId', async (req, res) => {
   try {
     // Look up the user from req.session
@@ -127,10 +128,5 @@ router.put('/:pantryId', async (req, res) => {
     res.redirect('/');
   }
 });
-
-// router.get 
-// route will be /pantryid
-// first find pantry id then have res.render to show specific pantry/show.ejs
-
 
 module.exports = router;
