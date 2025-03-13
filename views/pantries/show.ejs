@@ -1,0 +1,48 @@
+<!-- views/pantries/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/show.css" />
+    <title><%= pantry.title %></title>
+  </head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="show-body">
+      <div class="show-header">
+        <h1><%= pantry.title %> at <%= pantry.name %></h1>
+        <div class="show-sidebar">
+          <div class="show-actions">
+            <a
+              href="/users/<%= user._id %>/pantries/<%= pantry._id %>/edit"
+            >
+              Edit App
+            </a>
+            <form
+              action="/users/<%= user._id %>/pantries/<%= pantry._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit">Delete App</button>
+            </form>
+          </div>
+          <p>Current Status: <%= pantry.status %></p>
+        </div>
+      </div>
+      <div class="show-notes-container">
+        <% if (pantry.postingLink) { %>
+        <a href="<%= pantry.postingLink %>" target="_blank"
+          >View job posting</a
+        >
+        <% } %> <% if (pantry.notes) { %>
+        <div class="show-notes">
+          <h2>Notes:</h2>
+          <p><%= pantry.notes %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>  
+</html>
