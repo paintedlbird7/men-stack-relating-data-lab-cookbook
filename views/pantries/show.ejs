@@ -11,6 +11,13 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <h1><%= application.title %> at <%= application.company %></h1>
+    <% if (application.notes) { %>
+    <p>Notes: <%= application.notes %></p>
+    <% } %> <% if (application.postingLink) { %>
+    <a href="<%= application.postingLink %>">View job posting</a>
+    <% } %>
+    <p>Current Status: <%= application.status %></p>
     <div class="show-body">
       <div class="show-header">
         <h1><%= pantry.title %> at <%= pantry.name %></h1>

@@ -21,6 +21,18 @@
       </a>
       <% }) %>
     </ul>
+    <!-- views/pantries/index.ejs -->
+
+<ul>
+  <% pantries.forEach((pantry)=>{ %>
+  <li>
+    <!-- Add a link around each pantry, directing to the 'show' page -->
+    <a href="/users/<%= user._id %>/pantries/<%= pantry._id %>">
+      <%= pantry.title %> at <%= pantry.company %>
+    </a>
+  </li>
+  <% }) %>
+</ul>
     <div class="index-container">
       <div class="text-container">
         <h1 class="main-header">Cookbook</h1>

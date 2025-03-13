@@ -45,6 +45,28 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/:pantryId', (req, res) => {
+  res.send(`here is your request param: ${req.params.pantryId}`);
+});
+
+
+router.get('/:pantryId', async (req, res) => {
+  try {
+    // Look up the user from req.session
+    const currentUser = await User.findById(req.session.user._id);
+    // Find the pantry by the pantryId supplied from req.params
+    const pantry = currentUser.pantries.id(req.params.pantryId);
+    // Render the show view, passing the pantry data in the context object
+    res.render('pantries/show.ejs', {
+      pantry: pantry,
+    });
+  } catch (error) {
+    // If any errors, log them and redirect back home
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
 // DELETE /users/:userId/pantries/:pantriesId
 //TODO: localhost doesnt have any delete functionality
 router.delete('/:pantryId', async (req, res) => {
@@ -84,7 +106,6 @@ router.get('/:pantryId/edit', async (req, res) => {
 
 //PUT /users/:userId/pantries/:pantryId
 // controllers/pantries.js`
-
 router.put('/:pantryId', async (req, res) => {
   try {
     // Find the user from req.session
