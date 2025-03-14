@@ -11,7 +11,7 @@ body {
     background-color: #9ac2ef;
   }
 .index-body {
-    background-image: url('https://img.freepik.com/free-photo/rocket-taking-off-boost-symbol-ai-generated-image_268835-6577.jpg');
+    /* background-image: url('https://img.freepik.com/free-photo/rocket-taking-off-boost-symbol-ai-generated-image_268835-6577.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;

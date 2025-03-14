@@ -17,7 +17,8 @@ const foodSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['interested', 'applied', 'interviewing', 'rejected', 'accepted'],
+    enum: []
+    // enum: ['fresh', 'past due', 'throw out', 'need more', 'donate'],
   },
 });
 
@@ -31,7 +32,6 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   pantries: [foodSchema], // Embedded schema as an array
-  // applications: [applicationSchema], // embedding the applicationSchema here
   });
 
 const User = mongoose.model('User', userSchema);

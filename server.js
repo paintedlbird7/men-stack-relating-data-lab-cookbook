@@ -11,7 +11,6 @@ const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
 // pantries: [foodSchema], // Embedded schema as an array
-  // applications: [applicationSchema], // embedding the applicationSchema here
 
   // Require controllers
 const authController = require('./controllers/auth.js');

@@ -5,6 +5,8 @@ const router = express.Router();
 const User = require('../models/user.js');
 
 // GET
+// TODO: 1. left at Conceptualize the new route
+//TODO: 2. ask Jordan if my BRD is right 
 router.get('/', async (req, res) => {
   try {
     // Look up the user from req.session
@@ -22,6 +24,7 @@ router.get('/', async (req, res) => {
 });
   
 // GET /users/:userid/pantries/new
+
 router.get('/new', async (req, res) => {
   res.render('pantries/new.ejs');
 });

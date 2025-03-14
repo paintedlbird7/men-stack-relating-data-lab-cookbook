@@ -13,7 +13,7 @@
     <div class="all-apps-body">
       <div class="all-apps-header">
     <h1>Your Pantry</h1>
-    <a class="add-app-link" href="/users/<%=user._id%>/pantries/new">Add an App</a>
+    <a class="add-app-link" href="/users/<%=user._id%>/pantries/new">Add a Recipe</a>
     <ul>
       <% pantries.forEach((pantry)=>{ %>
       <a href="/users/<%= user._id %>/pantries/<%= pantry._id %>">
@@ -24,7 +24,7 @@
     <div class="index-container">
       <div class="text-container">
         <h1 class="main-header">Cookbook</h1>
-        <p class="subheader">A job pantry tracker.</p>
+        <p class="subheader">A pantry tracker.</p>
       </div>
     </div>
   </body>
